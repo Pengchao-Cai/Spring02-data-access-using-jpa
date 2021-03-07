@@ -47,11 +47,14 @@ public class AccessDataJpaApplication {
 			repository.findByLastName("Bauer").forEach(bauer -> {
 				log.info(bauer.toString());
 			});
-			/*
-			 for (Customer bauer : repository.findByLastName("Bauer")) {
-			  log.info(bauer.toString());
-			 }
-			*/
+
+			// fetch by first name
+			log.info("Customer found with findByFirstName('Jack'):");
+			log.info("--------------------------------------------");
+			repository.findByFirstName("Jack").forEach(guy -> {
+				log.info(guy.toString());
+			});
+
 			log.info("");
 		};
 	}
